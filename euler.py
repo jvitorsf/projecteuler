@@ -90,7 +90,7 @@ def problem34():
 #Answer: 872187
 def problem36():
 	cont = 0
-	soma = 0;
+	soma = 0
 	
 	while(cont<1000000):
 		#if cont equals to it's inverse (String)
@@ -99,11 +99,31 @@ def problem36():
 			revbin = bin(cont)[2:]
 			revbin = revbin[::-1]
 			if(str(bin(cont)[2:]) == str(revbin)):
-				soma = soma+cont;
+				soma = soma+cont
 		cont = cont + 1
 	
-	return soma;
+	return soma
 
+#Problem 48
+#Find the last ten digits of the series, 1^1 + 2^2 + 3^3 + ... + 1000^1000
+#Answer: 9110846700
+def problem48(n):
+	soma = 0;
+	if(n==1):
+		return 1
+	else:
+		soma = soma + pow(n,n) + problem48(n-1)
+		print n
+	return soma
+#And without recursivity (Better way)
+def problem48_2(n):
+	soma = 0;
+	for i in range(1, 1001):
+		soma = soma + pow(i,i)
+	return soma
+#And in one line (not written by me)
+def problem48_3():
+	return str(sum(i**i for i in range(1,1001)))[-10:]
 
 
 #Function Calls
@@ -112,6 +132,20 @@ def problem36():
 #print(problem2())
 #primeNumber(10001)
 #print problem34()
-print problem36()
+#print problem36()
+
+#Solution of problem 48
+# x = problem48(999)
+# y = pow(1000,1000)
+# z = x + y
+# print z
+
+#Another solution
+#print problem48_2(1000)
+print problem48_3()
+
+#End of solution of problem 48
+
+
 
 raw_input("\n\nPress enter to exit");
