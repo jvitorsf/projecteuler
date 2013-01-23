@@ -53,25 +53,7 @@ def primeNumber(n):
 
 	return lastPrime
 
-#Problem 36
-#Find the sum of all numbers less than one million which are palindromic in base 10 and base 2
-#Answer: 872187
-def problem36():
-	cont = 0
-	soma = 0;
-	
-	while(cont<1000000):
-		#if cont equals to it's inverse (String)
-		if(str(cont) == str(cont)[::-1]):
-			#if cont (binarie) is equal to it's inverse (String)
-			revbin = bin(cont)[2:]
-			revbin = revbin[::-1]
-			if(str(bin(cont)[2:]) == str(revbin)):
-				soma = soma+cont;
-		cont = cont + 1
-	
-	return soma;
-
+#Problem 34
 #145: 1! + 4! +5! = 1 + 24 + 120 ==145
 #Find the sum of all number with this caracteristc (The sum of the factorial is equal to the number)
 #Answer: 40730
@@ -103,14 +85,33 @@ def problem34():
 	return soma2
 
 
+#Problem 36
+#Find the sum of all numbers less than one million which are palindromic in base 10 and base 2
+#Answer: 872187
+def problem36():
+	cont = 0
+	soma = 0;
+	
+	while(cont<1000000):
+		#if cont equals to it's inverse (String)
+		if(str(cont) == str(cont)[::-1]):
+			#if cont (binarie) is equal to it's inverse (String)
+			revbin = bin(cont)[2:]
+			revbin = revbin[::-1]
+			if(str(bin(cont)[2:]) == str(revbin)):
+				soma = soma+cont;
+		cont = cont + 1
+	
+	return soma;
+
+
 
 #Function Calls
 
 #multipleSum()
 #print(problem2())
 #primeNumber(10001)
-#print problem36()
-#print (factorial(5))
-#print factorial(6)
-print problem34()
+#print problem34()
+print problem36()
+
 raw_input("\n\nPress enter to exit");
